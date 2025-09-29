@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class CitaManager implements CitaService {
+public class CitaManager implements Citaservice {
     private final List<Cita> citas = new ArrayList<>();
     private final Map<Paciente, List<Cita>> citasPorPaciente = new ConcurrentHashMap<>();
     private final Map<Medico, List<Cita>> citasPorMedico = new ConcurrentHashMap<>();
