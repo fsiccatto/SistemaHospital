@@ -2,16 +2,14 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Objects;
+import lombok.*;
 
+@Getter @Setter
 public class Matricula implements Serializable {
     private final String numero;
 
     public Matricula(String numero) {
         this.numero = validarMatricula(numero);
-    }
-
-    public String getNumero() {
-        return numero;
     }
 
     private String validarMatricula(String numero) {

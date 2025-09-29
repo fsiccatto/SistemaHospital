@@ -3,7 +3,9 @@ package entidades;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import lombok.*;
 
+@Getter @Setter
 public abstract class Persona implements Serializable {
     protected final String nombre;
     protected final String apellido;
@@ -19,25 +21,6 @@ public abstract class Persona implements Serializable {
         this.tipoSangre = Objects.requireNonNull(tipoSangre, "El tipo de sangre no puede ser nulo");
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public TipoSangre getTipoSangre() {
-        return tipoSangre;
-    }
 
     public String getNombreCompleto() {
         return nombre + " " + apellido;

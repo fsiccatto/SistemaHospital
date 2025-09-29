@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import lombok.*;
 
+@Getter @Setter
 public class Paciente extends Persona implements Serializable {
     private final HistoriaClinica historiaClinica;
     private final String telefono;
@@ -22,21 +24,6 @@ public class Paciente extends Persona implements Serializable {
         this.historiaClinica = new HistoriaClinica(this);
     }
 
-    public HistoriaClinica getHistoriaClinica() {
-        return historiaClinica;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public Hospital getHospital() {
-        return hospital;
-    }
 
     public void setHospital(Hospital hospital) {
         if (this.hospital != hospital) {

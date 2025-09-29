@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import lombok.*;
 
+@Getter @Setter
 public class Medico extends Persona implements Serializable {
     private final Matricula matricula;
     private final EspecialidadMedica especialidad;
@@ -18,18 +20,6 @@ public class Medico extends Persona implements Serializable {
         super(nombre, apellido, dni, fechaNacimiento, tipoSangre);
         this.matricula = new Matricula(numeroMatricula);
         this.especialidad = Objects.requireNonNull(especialidad, "La especialidad no puede ser nula");
-    }
-
-    public Matricula getMatricula() {
-        return matricula;
-    }
-
-    public EspecialidadMedica getEspecialidad() {
-        return especialidad;
-    }
-
-    public Departamento getDepartamento() {
-        return departamento;
     }
 
     public void setDepartamento(Departamento departamento) {

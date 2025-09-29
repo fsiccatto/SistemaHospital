@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import lombok.*;
 
+@Getter @Setter
 public class Departamento implements Serializable {
     private final String nombre;
     private final EspecialidadMedica especialidad;
@@ -16,30 +18,6 @@ public class Departamento implements Serializable {
     public Departamento(String nombre, EspecialidadMedica especialidad) {
         this.nombre = validarString(nombre, "El nombre del departamento no puede ser nulo ni vacío");
         this.especialidad = Objects.requireNonNull(especialidad, "La especialidad no puede ser nula");
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public EspecialidadMedica getEspecialidad() {
-        return especialidad;
-    }
-
-    public Hospital getHospital() {
-        return hospital;
-    }
-
-    public void setHospital(Hospital hospital) {
-        if (this.hospital != hospital) {
-            if (this.hospital != null) {
-                this.hospital.getInternalDepartamentos().remove(this);
-            }
-            this.hospital = hospital;
-            if (hospital != null) {
-                hospital.getInternalDepartamentos().add(this);
-            }
-        }
     }
 
     public void agregarMedico(Medico medico) {
